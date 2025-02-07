@@ -3459,6 +3459,7 @@ impl dispatch::SurfaceInterface for CoreSurface {
 
     fn configure(&self, device: &dispatch::DispatchDevice, config: &crate::SurfaceConfiguration) {
         let device = device.as_core();
+        println!("Trying to configure..");
 
         let error = self.context.0.surface_configure(self.id, device.id, config);
         if let Some(e) = error {
